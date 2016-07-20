@@ -1,5 +1,97 @@
 @import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import 'variables';
 
 body {
-  background: #f5f8fa;
+  background: $background;
+}
+
+nav {
+  background: $white;
+  box-shadow: 0 1px 2px 0 #d4cece;
+}
+
+.navigation {
+  padding: 10px 2% 10px 2%;
+  margin: 0;
+  li {
+    list-style-type: none;
+    display: inline-block;
+    a {
+      color: $gray;
+      text-decoration: none;
+    }
+  }
+}
+
+.home {
+  float: left;
+  margin-right: 2%;
+  color: $gray;
+  .home-icon {
+    font-size: 1.7rem;
+  }
+}
+
+.logo {
+  margin-left: 40%;
+  font-size: 1.5rem;
+  color: $blue;
+}
+.new-tweet, .logout {
+  float: right;
+  margin-left: 2%;
+}
+
+.logout button {
+  background: transparent;
+  border: 1px solid $gray;
+  color: $gray;
+  padding: 4px 8px;
+  border-radius: 10%;
+}
+
+.new-tweet {
+  background: $accent;
+  padding: 5px;
+  color: $white;
+  border-radius: 10%;
+}
+
+.feed-container {
+  float: right;
+  width: 590px;
+  .feed-list {
+    padding: 0;
+    border: 1px solid #d4cece;
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+.new-post-form {
+  text-align: center;
+  background: $highlight;
+  padding: 10px 0 10px 0;
+  .user-icon {
+    background: transparent;
+    border: 1px solid $gray;
+    color: $gray;
+    padding: 1px 10px;
+    line-height: 2rem;
+    border-radius: 10%;
+    margin-left: 2%;
+  }
+  input {
+    width: 86.5%;
+    color: $accent;
+    border: 1px solid $accent;
+    padding-left: 1%;
+    line-height: 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+.tweet-details {
+  padding: 0;
 }

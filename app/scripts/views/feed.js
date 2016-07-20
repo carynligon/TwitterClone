@@ -5,6 +5,13 @@ import SinglePost from './singlePost';
 import session from '../models/username';
 
 const Feed = Backbone.View.extend({
+  initialize: function () {
+    tweets.on('add', ()=> {
+      console.log('new model added');
+      this.render();
+    });
+    tweets.fetch();
+  },
   tagName: 'div',
   className: 'feed-container',
   events: {
@@ -13,7 +20,8 @@ const Feed = Backbone.View.extend({
   keyAction: function (evt) {
     if (evt.which === 13) {
       tweets.create({
-        author: session.username,
+        fullname: session.get('fullname'),
+        author: session.get('username'),
         body: $('#post-from-feed').val()
       });
       console.log(session);
@@ -22,7 +30,10 @@ const Feed = Backbone.View.extend({
   template: function () {
     return `
     <ul class="feed-list">
-    <input type="text" name="post-from-feed" id="post-from-feed" placeholder="What's happening?" />
+    <form class="new-post-form">
+      <i class="fa fa-user user-icon" aria-hidden="true"></i>
+      <input type="text" name="post-from-feed" id="post-from-feed" placeholder="What's happening?" />
+    </form>
     </ul>
     `;
   },
@@ -33,7 +44,7 @@ const Feed = Backbone.View.extend({
         model: tweet
       });
       singlePost.render();
-      this.$('ul').append(singlePost.$el);
+      $('.feed-list').append(singlePost.$el);
     });
     return this;
   }

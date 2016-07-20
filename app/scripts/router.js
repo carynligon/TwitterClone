@@ -5,6 +5,7 @@ import LoginView from './views/login';
 import SignupView from './views/signup';
 import Feed from './views/feed';
 import session from './models/username';
+import Nav from './views/nav';
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -21,9 +22,9 @@ const Router = Backbone.Router.extend({
     $('.container').empty().append(signup.render().$el);
   },
   feedFunction: function () {
-    console.log(session);
+    let nav = new Nav();
     let feed = new Feed();
-    $('.container').empty().append(feed.render().$el);
+    $('.container').empty().append(nav.render().$el).append(feed.render().$el);
   }
  });
 

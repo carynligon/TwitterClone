@@ -397,4 +397,79 @@ textarea {
 body {
   background: #f5f8fa; }
 
+nav {
+  background: #fff;
+  box-shadow: 0 1px 2px 0 #d4cece; }
+
+.navigation {
+  padding: 10px 2% 10px 2%;
+  margin: 0; }
+  .navigation li {
+    list-style-type: none;
+    display: inline-block; }
+    .navigation li a {
+      color: #66757f;
+      text-decoration: none; }
+
+.home {
+  float: left;
+  margin-right: 2%;
+  color: #66757f; }
+  .home .home-icon {
+    font-size: 1.7rem; }
+
+.logo {
+  margin-left: 40%;
+  font-size: 1.5rem;
+  color: #00aced; }
+
+.new-tweet, .logout {
+  float: right;
+  margin-left: 2%; }
+
+.logout button {
+  background: transparent;
+  border: 1px solid #66757f;
+  color: #66757f;
+  padding: 4px 8px;
+  border-radius: 10%; }
+
+.new-tweet {
+  background: #ff5b33;
+  padding: 5px;
+  color: #fff;
+  border-radius: 10%; }
+
+.feed-container {
+  float: right;
+  width: 590px; }
+  .feed-container .feed-list {
+    padding: 0;
+    border: 1px solid #d4cece; }
+    .feed-container .feed-list li {
+      list-style-type: none; }
+
+.new-post-form {
+  text-align: center;
+  background: #ffeae5;
+  padding: 10px 0 10px 0; }
+  .new-post-form .user-icon {
+    background: transparent;
+    border: 1px solid #66757f;
+    color: #66757f;
+    padding: 1px 10px;
+    line-height: 2rem;
+    border-radius: 10%;
+    margin-left: 2%; }
+  .new-post-form input {
+    width: 86.5%;
+    color: #ff5b33;
+    border: 1px solid #ff5b33;
+    padding-left: 1%;
+    line-height: 2rem;
+    font-size: 0.9rem; }
+
+.tweet-details {
+  padding: 0; }
+
 /*# sourceMappingURL=main.css.map */
