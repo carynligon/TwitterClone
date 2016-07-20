@@ -35,13 +35,13 @@ const Router = Backbone.Router.extend({
     $('.container').empty().append(nav.render().$el).append(`<main></main>`);
     $('main').append(sidebar.render().$el).append(feed.render().$el);
   },
-  profileFunction: function () {
+  profileFunction: function (username) {
     tweets.off();
     let nav = new Nav();
     let profile = new Profile();
-    let profileSidebar = new ProfileSidebar();
+    let profileSidebar = new ProfileSidebar(username);
     $('.container').empty().append(nav.render().$el).append(`<main></main>`);
-    $('main').append(profileSidebar.render().$el).append(profile.render().$el);
+    $('main').append(profileSidebar.$el).append(profile.render().$el);
   }
  });
 

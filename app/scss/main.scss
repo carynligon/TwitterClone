@@ -76,8 +76,20 @@ aside {
       border: 1px solid $gray;
       color: $gray;
       padding: 1px 10px;
+      float: left;
     }
   }
+}
+
+.fullname {
+  font-weight: bold;
+}
+
+.username-info {
+  width: 170px;
+  padding-top: 25px;
+  margin-left: 7px;
+  float: left;
 }
 
 .new-tweet {
@@ -168,12 +180,26 @@ aside {
   color: $gray;
 }
 
+.user-interactions {
+  padding-left: 55px;
+  li {
+    font-size: 0.8rem;
+    margin-right: 5%;
+    color: #d4cece;
+  }
+}
+
 .profile-container {
+  float: right;
   width: 590px;
-  display: inline-block;
+  margin-top: 10px;
   .feed-list {
     li {
       list-style-type: none;
+    }
+    .single-tweet {
+      padding: 0 10px 10px 10px;
+      border-bottom: 1px solid #d4cece;
     }
   }
 }

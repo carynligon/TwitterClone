@@ -13,8 +13,10 @@ const SessionSidebar = Backbone.View.extend({
         return `
     <div class="user-info">
       <a href="#profile/${session.get('username')}"><i class="fa fa-user user-icon" aria-hidden="true"></i></a>
-      <a href="#profile/${session.get('username')}" class="fullname">${session.get('fullname')}</a>
-      <a href="#profile/${session.get('username')}">@${session.get('username')}</a>
+      <div class="username-info">
+        <a href="#profile/${session.get('username')}" class="fullname">${session.get('fullname')}</a>
+        <a href="#profile/${session.get('username')}">@${session.get('username')}</a>
+      </div>
     </div>
     `;
     },

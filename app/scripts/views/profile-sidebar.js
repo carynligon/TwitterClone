@@ -4,26 +4,33 @@ import userCollection from '../collections/all-users';
 import settings from '../settings';
 import _ from 'underscore';
 
+// let model = '';
 
 const ProfileSidebar = Backbone.View.extend({
-  initialize: function () {
-    this.on('add', () => {
+  initialize: function (username) {
+    userCollection.on('add', () => {
+      console.log(userCollection);
+      this.model = userCollection.models[0];
+      console.log(this.model);
       this.render();
     });
-    userCollection.fetch({url:`https://baas.kinvey.com/user/${settings.appKey}/?query={"username":"${location.hash.slice(9)}"}`});
+    userCollection.fetch({url:`https://baas.kinvey.com/user/${settings.appKey}/?query={"username":"${username}"}`});
   },
   tagName: 'aside',
-  template: () => {
+  template: function () {
     return `
     <div class="user-info">
-      <a href="#profile/${userCollection.get('username')}"><i class="fa fa-user user-icon" aria-hidden="true"></i></a>
-      <a href="#profile/${userCollection.get('username')}" class="fullname">${userCollection.get('fullname')}</a>
-      <a href="#profile/${userCollection.get('username')}">@${userCollection.get('username')}</a>
+      <a href="#profile/${this.model.get('username')}"><i class="fa fa-user user-icon" aria-hidden="true"></i></a>
+      <div class="username-info">
+        <a href="#profile/${this.model.get('username')}" class="username">${this.model.get('username')}</a>
+        <a href="#profile/${this.model.get('username')}">@${this.model.get('username')}</a>
+      </div>
     </div>
     `;
   },
   render: function () {
-    console.log(userCollection);
+    console.log(this);
+    console.log(this.model.get('username'));
     this.$el.html(this.template());
     return this;
   }
