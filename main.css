@@ -401,6 +401,10 @@ nav {
   background: #fff;
   box-shadow: 0 1px 2px 0 #d4cece; }
 
+main {
+  width: 895px;
+  margin: 0 auto; }
+
 .navigation {
   padding: 10px 2% 10px 2%;
   margin: 0; }
@@ -440,26 +444,39 @@ nav {
 
 aside {
   width: 290px;
+  margin-top: 10px;
+  background: #fff;
   display: inline-block; }
 
 .new-tweet {
-  background: #ff5b33;
+  background: #1b95e0;
   padding: 5px;
   color: #fff;
   border-radius: 10%; }
 
 .feed-container {
   float: right;
-  width: 590px; }
-  .feed-container .feed-list {
+  width: 590px;
+  margin-top: 10px; }
+  .feed-container .feed-list-wrapper {
     padding: 0;
     border: 1px solid #d4cece; }
-    .feed-container .feed-list li {
+    .feed-container .feed-list-wrapper li {
       list-style-type: none; }
+    .feed-container .feed-list-wrapper .single-tweet {
+      padding: 10px;
+      border-bottom: 1px solid #d4cece; }
+
+.feed-list {
+  padding: 0;
+  margin: 0;
+  background: #fff; }
+  .feed-list .single-tweet:last-child {
+    border-bottom: 0; }
 
 .new-post-form {
   text-align: center;
-  background: #ffeae5;
+  background: #e8f4fb;
   padding: 10px 0 10px 0; }
   .new-post-form .user-icon {
     background: transparent;
@@ -471,13 +488,31 @@ aside {
     margin-left: 2%; }
   .new-post-form input {
     width: 86.5%;
-    color: #ff5b33;
-    border: 1px solid #ff5b33;
+    color: #1b95e0;
+    border: 1px solid #1b95e0;
     padding-left: 1%;
     line-height: 2rem;
     font-size: 0.9rem; }
 
 .tweet-details {
   padding: 0; }
+  .tweet-details li {
+    display: inline-block; }
+  .tweet-details .user-icon {
+    font-size: 2rem;
+    border: 1px solid #d4cece;
+    border-radius: 10%;
+    padding: 5px 10px; }
+  .tweet-details .body {
+    display: block;
+    padding-left: 55px; }
+
+.username {
+  font-weight: bold;
+  padding-left: 5px; }
+
+.handle, .time {
+  font-size: 0.8rem;
+  color: #66757f; }
 
 /*# sourceMappingURL=main.css.map */
