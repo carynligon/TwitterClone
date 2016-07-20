@@ -3,6 +3,7 @@ import Backbone from 'backbone';
 import session from '../models/username';
 import router from '../router';
 import settings from '../settings';
+import userCollection from '../collections/all-users';
 import UserMod from '../models/user';
 
 const SignupView = Backbone.View.extend({
@@ -17,13 +18,10 @@ const SignupView = Backbone.View.extend({
     let username =  $('#username').val();
     let password =  $('#password').val();
     let newUser = new UserMod();
-    newUser.save({username:username, password: password, fullname: fullname}, {
-      success: function (response) {
-        console.log(response);
-        router.navigate('feed', {trigger:true});
-      },
-      error: function () {
-        console.log('error, user not created');
+    userCollection.create({username:username, password: password, fullname: fullname}, {
+      success: function () {
+        console.log('success, you created a new user');
+        router.navigate('login', {trigger:true});
       }
     });
   },

@@ -3,6 +3,9 @@
 
 body {
   background: $background;
+  a {
+    text-decoration: none;
+  }
 }
 
 nav {
@@ -65,6 +68,16 @@ aside {
   margin-top: 10px;
   background: $white;
   display: inline-block;
+  box-sizing: border-box;
+  padding: 15px 0 25px 15px;
+  .user-info {
+    .user-icon {
+      font-size: 3rem;
+      border: 1px solid $gray;
+      color: $gray;
+      padding: 1px 10px;
+    }
+  }
 }
 
 .new-tweet {
@@ -85,7 +98,7 @@ aside {
       list-style-type: none;
     }
     .single-tweet {
-      padding: 10px;
+      padding: 0 10px 10px 10px;
       border-bottom: $border;
     }
   }
@@ -140,6 +153,11 @@ aside {
   }
 }
 
+.profile-pic {
+  position: relative;
+  top: 19px;
+}
+
 .username {
   font-weight: bold;
   padding-left: 5px;
@@ -148,4 +166,14 @@ aside {
 .handle, .time {
   font-size: 0.8rem;
   color: $gray;
+}
+
+.profile-container {
+  width: 590px;
+  display: inline-block;
+  .feed-list {
+    li {
+      list-style-type: none;
+    }
+  }
 }
