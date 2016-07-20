@@ -396,6 +396,8 @@ textarea {
 
 body {
   background: #f5f8fa; }
+  body a {
+    text-decoration: none; }
 
 nav {
   background: #fff;
@@ -446,7 +448,14 @@ aside {
   width: 290px;
   margin-top: 10px;
   background: #fff;
-  display: inline-block; }
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 15px 0 25px 15px; }
+  aside .user-info .user-icon {
+    font-size: 3rem;
+    border: 1px solid #66757f;
+    color: #66757f;
+    padding: 1px 10px; }
 
 .new-tweet {
   background: #1b95e0;
@@ -464,7 +473,7 @@ aside {
     .feed-container .feed-list-wrapper li {
       list-style-type: none; }
     .feed-container .feed-list-wrapper .single-tweet {
-      padding: 10px;
+      padding: 0 10px 10px 10px;
       border-bottom: 1px solid #d4cece; }
 
 .feed-list {
@@ -507,6 +516,10 @@ aside {
     display: block;
     padding-left: 55px; }
 
+.profile-pic {
+  position: relative;
+  top: 19px; }
+
 .username {
   font-weight: bold;
   padding-left: 5px; }
@@ -514,5 +527,11 @@ aside {
 .handle, .time {
   font-size: 0.8rem;
   color: #66757f; }
+
+.profile-container {
+  width: 590px;
+  display: inline-block; }
+  .profile-container .feed-list li {
+    list-style-type: none; }
 
 /*# sourceMappingURL=main.css.map */
