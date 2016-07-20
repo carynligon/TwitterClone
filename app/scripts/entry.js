@@ -6,8 +6,8 @@ import router from './router';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   console.log('intercepted');
-  if (session.get('authtoken')) {
-    xhrAjax.setRequestHeader('Authorization', 'Kinvey ' + session.get('authtoken'));
+  if (localStorage.getItem('authtoken')) {
+    xhrAjax.setRequestHeader('Authorization', 'Kinvey ' + localStorage.getItem('authtoken'));
   } else {
     xhrAjax.setRequestHeader('Authorization', 'Basic ' + settings.basicAuth);
   }
@@ -15,6 +15,8 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
 
 Backbone.history.start();
 
-if (!session.username) {
+if (!localStorage.getItem('authtoken')) {
   router.navigate('login', {trigger: true});
+} else {
+  session.retrieve();
 }

@@ -10,6 +10,11 @@ nav {
   box-shadow: 0 1px 2px 0 #d4cece;
 }
 
+main {
+  width: 895px;
+  margin: 0 auto;
+}
+
 .navigation {
   padding: 10px 2% 10px 2%;
   margin: 0;
@@ -57,6 +62,8 @@ nav {
 
 aside {
   width: 290px;
+  margin-top: 10px;
+  background: $white;
   display: inline-block;
 }
 
@@ -70,12 +77,26 @@ aside {
 .feed-container {
   float: right;
   width: 590px;
-  .feed-list {
+  margin-top: 10px;
+  .feed-list-wrapper {
     padding: 0;
-    border: 1px solid #d4cece;
+    border: $border;
     li {
       list-style-type: none;
     }
+    .single-tweet {
+      padding: 10px;
+      border-bottom: $border;
+    }
+  }
+}
+
+.feed-list {
+  padding: 0;
+  margin: 0;
+  background: $white;
+  .single-tweet:last-child {
+    border-bottom: 0;
   }
 }
 
@@ -104,4 +125,27 @@ aside {
 
 .tweet-details {
   padding: 0;
+  li {
+    display: inline-block;
+  }
+  .user-icon {
+    font-size: 2rem;
+    border: $border;
+    border-radius: 10%;
+    padding: 5px 10px;
+  }
+  .body {
+    display: block;
+    padding-left: 55px;
+  }
+}
+
+.username {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.handle, .time {
+  font-size: 0.8rem;
+  color: $gray;
 }

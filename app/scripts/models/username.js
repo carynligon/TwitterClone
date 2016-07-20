@@ -15,6 +15,11 @@ const Session = Backbone.Model.extend({
         userId: response._id
       };
     }
+  },
+  retrieve: function() {
+      this.fetch({
+          url: `https://baas.kinvey.com/user/${settings.appKey}/_me`
+      });
   }
 });
 

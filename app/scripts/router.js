@@ -6,6 +6,7 @@ import SignupView from './views/signup';
 import SessionSidebar from './views/profile-sidebar';
 import Feed from './views/feed';
 import session from './models/username';
+import tweets from './collections/tweets';
 import Nav from './views/nav';
 
 const Router = Backbone.Router.extend({
@@ -24,10 +25,12 @@ const Router = Backbone.Router.extend({
     $('.container').empty().append(signup.render().$el);
   },
   feedFunction: function () {
+    tweets.off();
     let nav = new Nav();
     let feed = new Feed();
     let sidebar = new SessionSidebar();
-    $('.container').empty().append(nav.render().$el).append(sidebar.render().$el).append(feed.render().$el);
+    $('.container').empty().append(nav.render().$el).append(`<main></main>`);
+    $('main').append(sidebar.render().$el).append(feed.render().$el);
   }
  });
 
