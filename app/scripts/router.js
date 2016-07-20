@@ -3,6 +3,7 @@ import Backbone from 'backbone';
 import settings from './settings';
 import LoginView from './views/login';
 import SignupView from './views/signup';
+import SessionSidebar from './views/profile-sidebar';
 import Feed from './views/feed';
 import session from './models/username';
 import Nav from './views/nav';
@@ -11,6 +12,7 @@ const Router = Backbone.Router.extend({
   routes: {
     login: 'loginFunction',
     signup: 'signupFunction',
+    sessionSidebar: 'sessionSidebarFunction',
     feed: 'feedFunction'
   },
   loginFunction: function () {
@@ -24,7 +26,8 @@ const Router = Backbone.Router.extend({
   feedFunction: function () {
     let nav = new Nav();
     let feed = new Feed();
-    $('.container').empty().append(nav.render().$el).append(feed.render().$el);
+    let sidebar = new SessionSidebar();
+    $('.container').empty().append(nav.render().$el).append(sidebar.render().$el).append(feed.render().$el);
   }
  });
 
