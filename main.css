@@ -545,6 +545,15 @@ aside {
     margin-right: 5%;
     color: #d4cece; }
 
+.heart-icon:hover {
+  color: #e2264d; }
+
+.edit-icon:hover {
+  color: #00aced; }
+
+.delete-icon:hover {
+  color: #66757f; }
+
 .profile-container {
   float: right;
   width: 590px;
