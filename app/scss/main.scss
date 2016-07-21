@@ -58,9 +58,50 @@ main {
   border-radius: 10%;
 }
 
-.login-form {
+.login-header {
+  background: $white;
+  text-align: center;
+  line-height: 8rem;
+  box-shadow: 0 1px 2px 0 #d4cece;
+  i {
+    font-size: 5rem;
+    padding-top: 2rem;
+    color: $blue;
+  }
+}
+
+.login-form , .signup-form{
   width: 30%;
-  margin: 0 auto;
+  margin: 10vh auto 0 auto;
+  padding: 20px 0;
+  background: $white;
+  border: $border;
+  h2 {
+    margin-left: 5%;
+    display: block;
+  }
+  input {
+    display: block;
+    width: 80%;
+    margin:0 0 15px 5%;
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.login-form, .signup-form {
+  input[type="submit"] {
+    background: $blue;
+    border: 0;
+    color: $white;
+  }
+  a {
+    font-size: 0.8rem;
+    color: $blue;
+    display: block;
+    margin-left: 5%;
+  }
 }
 
 aside {
@@ -213,5 +254,43 @@ aside {
       padding: 0 10px 10px 10px;
       border-bottom: 1px solid #d4cece;
     }
+  }
+}
+
+@media screen and (max-width: 905px) {
+  main {
+    width: 100%;
+  }
+  aside {
+    float: none;
+    display: block;
+    margin: 25px auto;
+    padding: 15px 0 75px 15px;
+  }
+  .feed-container {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .feed-container {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .feed-container {
+    width: 410px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .feed-container {
+    width: 356px;
+  }
+  #post-from-feed {
+    width: 80%;
   }
 }

@@ -27,11 +27,12 @@ const SignupView = Backbone.View.extend({
   },
   template: function () {
     return `
-    <h2>Login</h2>
+    <h2>Sign up</h2>
     <input id="fullname" type="text" name="fullname" placeholder="Full name"/>
     <input id="username" type="text" name="username" placeholder="username"/>
     <input id="password" type="password" name="password" placeholder="password"/>
     <input type="submit" name="submit" value="submit">
+    <a href="#login">Already a member? Sign in!</a>
     `;
   },
   render: function () {

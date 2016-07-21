@@ -440,9 +440,41 @@ main {
   padding: 4px 8px;
   border-radius: 10%; }
 
-.login-form {
+.login-header {
+  background: #fff;
+  text-align: center;
+  line-height: 8rem;
+  box-shadow: 0 1px 2px 0 #d4cece; }
+  .login-header i {
+    font-size: 5rem;
+    padding-top: 2rem;
+    color: #00aced; }
+
+.login-form, .signup-form {
   width: 30%;
-  margin: 0 auto; }
+  margin: 10vh auto 0 auto;
+  padding: 20px 0;
+  background: #fff;
+  border: 1px solid #d4cece; }
+  .login-form h2, .signup-form h2 {
+    margin-left: 5%;
+    display: block; }
+  .login-form input, .signup-form input {
+    display: block;
+    width: 80%;
+    margin: 0 0 15px 5%; }
+    .login-form input:focus, .signup-form input:focus {
+      outline: 0; }
+
+.login-form input[type="submit"], .signup-form input[type="submit"] {
+  background: #00aced;
+  border: 0;
+  color: #fff; }
+.login-form a, .signup-form a {
+  font-size: 0.8rem;
+  color: #00aced;
+  display: block;
+  margin-left: 5%; }
 
 aside {
   width: 290px;
@@ -563,5 +595,32 @@ aside {
   .profile-container .feed-list .single-tweet {
     padding: 0 10px 10px 10px;
     border-bottom: 1px solid #d4cece; }
+
+@media screen and (max-width: 905px) {
+  main {
+    width: 100%; }
+
+  aside {
+    float: none;
+    display: block;
+    margin: 25px auto;
+    padding: 15px 0 75px 15px; }
+
+  .feed-container {
+    float: none;
+    display: block;
+    margin: 0 auto; } }
+@media screen and (max-width: 615px) {
+  .feed-container {
+    width: 500px; } }
+@media screen and (max-width: 525px) {
+  .feed-container {
+    width: 410px; } }
+@media screen and (max-width: 420px) {
+  .feed-container {
+    width: 356px; }
+
+  #post-from-feed {
+    width: 80%; } }
 
 /*# sourceMappingURL=main.css.map */

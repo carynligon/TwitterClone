@@ -10,12 +10,6 @@ const SinglePost = Backbone.View.extend({
     className: 'single-tweet',
     events: {
       'click .delete': 'deleteFunction',
-      'click .edit': 'editFunction'
-    },
-    editFunction: function (evt) {
-      let body = $(evt.target).parent('user-interactions').siblings('.body');
-      console.log(body);
-      body.append(`<input type="text" class="editing-tweet" value="${body.val()}"`);
     },
     deleteFunction: function () {
       this.model.destroy();
@@ -28,10 +22,10 @@ const SinglePost = Backbone.View.extend({
       <li class="username"><a href="#profile/${this.model.get('author')}">${this.model.get('fullname')}</a></li>
       <li class="handle"><a href="#profile/${this.model.get('author')}">@${this.model.get('author')}</a></li>
       <li class="time">${moment(new Date(this.model.get('timestamp'))).fromNow()}</li>
-      <li class="body">${this.model.get('body')}</li>
+      <li class="body" data-id=${this.model.get('_id')}>${this.model.get('body')}</li>
       <ul class="user-interactions">
-        <li class="like"><i class="fa fa-heart heart-icon" aria-hidden="true" data-id="${this.model.get('_id')}"></i></li>
-        <li class="edit"><i class="fa fa-pencil edit-icon" aria-hidden="true" data-id="${this.model.get('_id')}"></i></li>
+        <li class="like"><i class="fa fa-heart heart-icon" aria-hidden="true"></i></li>
+        <li class="edit"><a href="#edit/${this.model.get('_id')}"><i class="fa fa-pencil edit-icon" aria-hidden="true"></i></a></li>
         <li class="delete"><i class="fa fa-trash delete-icon" aria-hidden="true" data-id="${this.model.get('_id')}"></i></i></li>
     </ul>
     `;
