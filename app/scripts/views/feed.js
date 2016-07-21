@@ -1,13 +1,16 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
 import tweets from '../collections/tweets';
+import tweet from '../models/tweet';
 import SinglePost from './singlePost';
 import session from '../models/username';
 
 const Feed = Backbone.View.extend({
     initialize: function() {
         tweets.on('add', () => {
-            console.log('new model added');
+            this.render();
+        });
+        tweets.on('remove', () => {
             this.render();
         });
         tweets.fetch();
@@ -15,7 +18,7 @@ const Feed = Backbone.View.extend({
     tagName: 'div',
     className: 'feed-container',
     events: {
-        'keydown #post-from-feed': 'keyAction'
+        'keydown #post-from-feed': 'keyAction',
     },
     keyAction: function(evt) {
         if (evt.which === 13) {

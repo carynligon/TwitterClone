@@ -189,6 +189,18 @@ aside {
   }
 }
 
+.heart-icon:hover {
+  color: #e2264d;
+}
+
+.edit-icon:hover {
+  color: $blue;
+}
+
+.delete-icon:hover {
+  color: $gray;
+}
+
 .profile-container {
   float: right;
   width: 590px;
