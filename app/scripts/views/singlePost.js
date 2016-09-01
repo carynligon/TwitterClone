@@ -11,10 +11,15 @@ const SinglePost = Backbone.View.extend({
     events: {
       'click .delete': 'deleteFunction',
     },
-    deleteFunction: function () {
-      this.model.destroy();
-      console.log(tweets);
-    },
+    // deleteFunction: function () {
+    //   this.model.destroy({
+    //     success: (response) =>{
+    //       console.log(response);
+    //       tweets.remove(this.model);
+    //     }
+    //   });
+    //   console.log(tweets);
+    // },
     template: function() {
         return `
     <ul class="tweet-details">
@@ -32,6 +37,13 @@ const SinglePost = Backbone.View.extend({
     },
     render: function() {
         this.$el.html(this.template());
+        this.$('.delete-icon').on('click', () => {
+            this.model.destroy({
+              success: (response) =>{
+                console.log(response);
+              }
+            });
+        });
         return this;
     }
 });
