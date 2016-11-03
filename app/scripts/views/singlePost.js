@@ -11,15 +11,15 @@ const SinglePost = Backbone.View.extend({
     events: {
       'click .delete': 'deleteFunction',
     },
-    // deleteFunction: function () {
-    //   this.model.destroy({
-    //     success: (response) =>{
-    //       console.log(response);
-    //       tweets.remove(this.model);
-    //     }
-    //   });
-    //   console.log(tweets);
-    // },
+    deleteFunction: function () {
+      this.model.destroy({
+        success: (response) =>{
+          console.log(response);
+          // tweets.remove(this.model);
+        }
+      });
+      console.log(tweets);
+    },
     template: function() {
         return `
     <ul class="tweet-details">
